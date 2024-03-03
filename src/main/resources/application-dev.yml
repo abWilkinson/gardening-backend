@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://host.docker.internal:5432/gardening_db
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+jwt:
+  secret: R3JvdW5kc2tlZXBpbmdKV1RUb2tlblNlY3JldA==
