@@ -9,4 +9,4 @@ spring:
       ddl-auto: none
     show-sql: true
 jwt:
-  secret: R3JvdW5kc2tlZXBpbmdKV1RUb2tlblNlY3JldA==
+  secret: WvdabkOgRJ56bjWBOn28J0b9p1Z+zVE41j8WiF4YXrk=
