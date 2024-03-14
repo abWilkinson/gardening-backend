@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.duckisoft</groupId>
-	<artifactId>groundskeeping</artifactId>
+	<artifactId>gardening-backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>groundskeeping</name>
-	<description>Idverde backend spring boot app</description>
+	<description>Backend for gardening website</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
