@@ -17,7 +17,7 @@ import java.util.Map;
 
 @Component
 public class JwtTokenUtil {
-    public static final long JWT_TOKEN_VALIDITY = 7 * 60 * 60;
+    public static final long JWT_TOKEN_VALIDITY = 2592000000L; //30 days
 
     @Value("${jwt.secret}")
     private String secret;
@@ -47,7 +47,7 @@ public class JwtTokenUtil {
         return Jwts.builder()
                 .subject(subject)
                 .issuedAt(new Date())
-                .expiration(new Date(System.currentTimeMillis() + JWT_TOKEN_VALIDITY * 1000))
+                .expiration(new Date(System.currentTimeMillis() + JWT_TOKEN_VALIDITY))
                 .signWith(getSigningKey())
                 .compact();
     }

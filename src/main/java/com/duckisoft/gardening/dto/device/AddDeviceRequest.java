@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class DeviceRequest {
+public class AddDeviceRequest {
     private String name;
     private String description;
     private boolean temperature;

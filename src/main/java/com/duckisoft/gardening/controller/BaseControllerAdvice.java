@@ -14,7 +14,7 @@ import org.springframework.web.context.request.WebRequest;
 public class BaseControllerAdvice {
     @ExceptionHandler({ Exception.class })
     public final ResponseEntity<ErrorResponse> handleException(Exception ex, WebRequest request) {
-        log.error("Coontroller Advice error", ex);
+        log.error("Controller Advice error", ex);
         if (ex instanceof EmailExistsException) {
             return returnExceptionResponse(HttpStatus.CONFLICT, ex.getMessage());
         }
@@ -27,7 +27,10 @@ public class BaseControllerAdvice {
         if (ex instanceof DeviceException) {
             return returnExceptionResponse(HttpStatus.BAD_REQUEST, ex.getMessage());
         }
-        return returnExceptionResponse(HttpStatus.INTERNAL_SERVER_ERROR, ex.getMessage());
+        if (ex instanceof GenericExcepion) {
+            return returnExceptionResponse(HttpStatus.INTERNAL_SERVER_ERROR, ex.getMessage());
+        }
+        return returnExceptionResponse(HttpStatus.INTERNAL_SERVER_ERROR, "There was a problem with the request. Please try again later.");
     }
 
     private ResponseEntity<ErrorResponse> returnExceptionResponse(HttpStatus httpStatus, String message) {
